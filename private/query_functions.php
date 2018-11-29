@@ -44,21 +44,20 @@ function SignUp(){
 		echo "Username already exists";
 	}
 
-}
-else
-{
+	}
+	else
+	{
 	for($x=0;$x<count($errors);$x++)
 		echo $errors[$x];
-}
-}
-else
-{
-	echo "Error";
-}
-}
+	}
+	}
+	else
+	{
+		echo "Error";
+	}
+	} 
 
-function LogIn()
-{
+function LogIn(){
 	global $db;
 	$errors=array();
 	if(isset($_POST['login']))
@@ -96,8 +95,7 @@ function LogIn()
 
 }
 
-function uploadQuest()
-{
+function uploadQuest(){
 	global $db;
 	$errors=array();
 	if(isset($_POST['upload']))

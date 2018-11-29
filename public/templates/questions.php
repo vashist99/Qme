@@ -3,7 +3,7 @@ require_once('../../private/initialize.php');
 session_start();
 ?>
 
-<?php
+<?php //corrections that wil be made in status if user is logged out
 if($_SESSION['LOGOUT']=='True' && $_SESSION['status']=='LOGOUT')
 {
   $_SESSION['status']='LOGIN';
@@ -16,14 +16,14 @@ include('header.php');
 
   <div class="container-fluid">
      <?php
-     if($_SESSION['status']=='LOGIN'){
+     if($_SESSION['status']=='LOGIN'){ //if user is logged out and needs to add question the client will be redirected to login.php
       echo '<div id = "answer" class="w3-row" style="padding: 10px; font-weight: 400px; display: block">
 
         <p style = "border-style: groove; border-radius: 5px; padding: 5px; padding-left: 10px"><b><a href="login.php">Add Question</a></b></p>
       </div>';
     }
     else
-    {
+    { //if client is logged in it will redirect the client to users.php
       echo '<div id = "answer" class="w3-row" style="padding: 10px; font-weight: 400px; display: block">
 
         <p style = "border-style: groove; border-radius: 5px; padding: 5px; padding-left: 10px"><b><a href="user.php">Add Question</a></b></p>
@@ -35,7 +35,8 @@ include('header.php');
     ?>
 
     <?php
-     if($_SESSION['status']=='LOGIN'){
+    //if user is logged in then delete option will be given or a simple space will be given
+     if($_SESSION['user']==''){
 
       echo '<div id = "answer" class="w3-row" style="padding: 10px; font-weight: 400px; display: block">
 

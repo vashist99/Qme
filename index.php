@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+
+
+<?php session_start();
+//to use session variables
+//This is the first page that will be shown when server is run
+?>
 <html>
   <head>
     <link rel="stylesheet" href="public/static/style2.css" >
@@ -23,10 +28,10 @@
 
 <div style= 'position: absolute; bottom: 0; left: 40%; height: 50%'>
   <a href= "<?php
-    if($_SESSION['user']=='')
+    if($_SESSION['user']=='')  //if user is not logged in this button will redirect to login page
       echo 'public/templates/login.php';
 
-    else
+    else  //if user is logged in this button will redirect to questions page
         echo 'public/templates/questions.php';
 
     ?>" style= 'text-decoration: none'><h4 style= "text-align: center; color: white;font-size: 25px;font-family:'Orbitron', sans-serif;">Enter the world</h4></a>

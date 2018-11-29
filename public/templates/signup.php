@@ -7,12 +7,12 @@ session_start();
 if ($_SERVER['REQUEST_METHOD']=='POST')
   {
 
-    SignUp();
+    SignUp(); //defined in query_functions.php
   }
 
 ?>
 <?php
-$_SESSION['status']="LOGIN";
+$_SESSION['status']="LOGIN"; //to denote that client is logged out and is yet to login
 $title='Register';
 include('header.php');
 ?>
@@ -24,15 +24,11 @@ include('header.php');
     <h1 class="header-title rocky-dashed animate-pop-in" style="font-family: sans-serif;font-size: 50px; font-weight: 1500px; ">Q.me</h1>
     <h1 class="header-title animate-pop-in">Have a Question?</h1>
   <div class="animate-pop-in"  style="animation-delay: 1s; width: 370px; perspective: 1000; padding-bottom:30px;min-height: 400px">
-  
-        
+
           <div>
-         
-            
-              
 
             <div class="myform form "  >
-              
+
               <form action="signup.php" method="post" name="registration">
                 <div class="form-group">
                   <label>Name</label>
@@ -49,21 +45,20 @@ include('header.php');
                 <div class="form-group">
                  <label>Confirm Password</label>
                     <input type="password" name="confirm_password" id="password-confirm"  class="form-control"  placeholder="Enter Password" >
-                </div>             
+                </div>
                <div class="col-md-12 text-center ">
                   <input type="submit" value= 'Register' class=" btn btn-block mybtn btn-primary tx-tfm" name="register">
                </div>
               </form>
               <div class="col-md-12 text-center ">
-                  <a  id="loginButton" href="login.php" ><h3>Already a user?</a>
+                  <a  id="loginButton" href="login.php" ><h3>Already a user?</a> <?php //redirects to login page ?>
               </div>
-              
+
           </div>
         </div>
       </div>
     </div>
-  
-     
+
   <div style= 'padding: 20px'
      class="header-button animate-pop-in" ><a href="" class="button" style= "padding: 8px; background:#269300;border-radius:.25em;color:#fff;display:inline-block;padding:.25em .5em;margin:0 auto;text-align:center"><b>Get started today</b></a>
   </div>

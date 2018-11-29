@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
 
 ?>
   <?php
- $_SESSION['user']=$_SESSION['username'];
+  $_SESSION['user']=$_SESSION['username'];
   include('header.php');
 
   ?>
