@@ -28,7 +28,7 @@
 
 <div style= 'position: absolute; bottom: 0; left: 40%; height: 50%'>
   <a href= "<?php
-    if($_SESSION['user']=='')  //if user is not logged in this button will redirect to login page
+    if(!isset($_SESSION['user']))  //if user is not logged in this button will redirect to login page
       echo 'public/templates/login.php';
 
     else  //if user is logged in this button will redirect to questions page
